@@ -45,21 +45,19 @@ public class House extends Asset {
     }
 
     public double getValue() {
-        double value;
 
         if (this.condition == 4) {
-            value = (this.squareFoot * 180) + (this.lotSize * .25);
+            return (this.squareFoot * 180) + (this.lotSize * .25);
         }
         else if (this.condition == 3) {
-            value = (this.squareFoot * 130) + (this.lotSize * .25);
+            return (this.squareFoot * 130) + (this.lotSize * .25);
         }
         else if (this.condition == 2) {
-            value = (this.squareFoot * 90) + (this.lotSize * .25);
+            return (this.squareFoot * 90) + (this.lotSize * .25);
         }
         else {
-            value = (this.squareFoot * 80) + (this.lotSize * .25);
+            return(this.squareFoot * 80) + (this.lotSize * .25);
         }
-        return value;
     }
 
 }
