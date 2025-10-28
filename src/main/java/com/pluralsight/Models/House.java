@@ -44,6 +44,7 @@ public class House extends Asset {
         this.lotSize = lotSize;
     }
 
+    @Override
     public double getValue() {
 
         if (this.condition == 1) {

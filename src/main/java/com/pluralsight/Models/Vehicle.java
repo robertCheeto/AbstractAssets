@@ -35,6 +35,7 @@ public class Vehicle extends Asset {
         this.odometer = odometer;
     }
 
+    @Override
     public double getValue() {
         double value = getOriginalCost();
         int currentYear = 2025;
