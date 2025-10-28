@@ -46,13 +46,13 @@ public class House extends Asset {
 
     public double getValue() {
 
-        if (this.condition == 4) {
+        if (this.condition == 1) {
             return (this.squareFoot * 180) + (this.lotSize * .25);
         }
-        else if (this.condition == 3) {
+        else if (this.condition == 2) {
             return (this.squareFoot * 130) + (this.lotSize * .25);
         }
-        else if (this.condition == 2) {
+        else if (this.condition == 3) {
             return (this.squareFoot * 90) + (this.lotSize * .25);
         }
         else {
