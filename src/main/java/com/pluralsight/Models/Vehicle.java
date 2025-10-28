@@ -41,7 +41,7 @@ public class Vehicle extends Asset {
         int currentYear = 2025;
 
         if (odometer > 100000) {
-            if ((!makeModel.contains("Honda") && !makeModel.contains("Toyota"))) {
+            if ((!this.makeModel.contains("Honda") && !this.makeModel.contains("Toyota"))) {
                 value = value - (value * .25);
                 for (int i = this.year; i <= currentYear; i++) {
                     if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
