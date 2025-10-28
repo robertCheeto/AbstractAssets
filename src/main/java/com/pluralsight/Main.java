@@ -19,12 +19,34 @@ public class Main {
         assets.add(car1);
         assets.add(car2);
 
-//        Now, loop thru the Asset collection displaying the description of each asset, the
-//        date you acquired it, how much you paid for it, and its value.
+//        for (int i = 0; i < assets.size(); i++) {
+//            System.out.printf("%s | %s | $%.2f",assets.get(i).getDescription(), assets.get(i).getDateAcquired(), assets.get(i).getValue());
+//            System.out.println();
+//        }
+
         for (int i = 0; i < assets.size(); i++) {
-            System.out.printf("%s | %s | $%.2f",assets.get(i).getDescription(), assets.get(i).getDateAcquired(), assets.get(i).getValue());
-            System.out.println();
+            if (assets.get(i) instanceof House) {
+                System.out.printf("%s | %s | $%.2f | %s",assets.get(i).getDescription(), assets.get(i).getDateAcquired(), assets.get(i).getValue(), ((House) assets.get(i)).getAddress());
+                System.out.println();
+            }
+            else if (assets.get(i) instanceof Vehicle) {
+                System.out.printf("%s | %s | $%.2f | %s",assets.get(i).getDescription(), assets.get(i).getDateAcquired(), assets.get(i).getValue(), ((Vehicle) assets.get(i)).getMakeModel());
+                System.out.println();
+            }
         }
+
+        // for(int i = 0; i < 3; i ++) {
+        //if (people.get(i) instanceof ModernPerson) {
+        //System.out.print("ModernPerson--> ");
+        //}
+        //else if (people.get(i) instanceof Caveman) {
+        //System.out.print("Caveman--> ");
+        //}
+        //else if (people.get(i) instanceof Human) {
+        //System.out.print("Human--> ");
+        //}
+        //people.get(i).eat();
+        //}
 
     }
 }
