@@ -34,19 +34,5 @@ public class Main {
                 System.out.println();
             }
         }
-
-        // for(int i = 0; i < 3; i ++) {
-        //if (people.get(i) instanceof ModernPerson) {
-        //System.out.print("ModernPerson--> ");
-        //}
-        //else if (people.get(i) instanceof Caveman) {
-        //System.out.print("Caveman--> ");
-        //}
-        //else if (people.get(i) instanceof Human) {
-        //System.out.print("Human--> ");
-        //}
-        //people.get(i).eat();
-        //}
-
     }
 }
