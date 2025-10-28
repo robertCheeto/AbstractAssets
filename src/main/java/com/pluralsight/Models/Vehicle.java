@@ -39,36 +39,33 @@ public class Vehicle extends Asset {
         double value = getOriginalCost();
         int currentYear = 2025;
 
-        if (odometer > 100000 && (!makeModel.contains("Toyota") || !makeModel.contains("Honda"))) {
-            value = value - (value * .25);
+        if (odometer > 100000) {
+            if ((!makeModel.contains("Honda") && !makeModel.contains("Toyota"))) {
+                value = value - (value * .25);
+                for (int i = this.year; i <= currentYear; i++) {
+                    if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
+                        value = value - (value * .03);
+                    } else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
+                        value = value - (value * .06);
+                    } else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
+                        value = value - (value * .08);
+                    } else {
+                        value = 1000.00;
+                    }
+                }
+            }
 
-            if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
-                value = value - (value * .03);
-            }
-            else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
-                value = value - (value * .06);
-            }
-            else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
-                value = value - (value * .08);
-            }
             else {
-                value = 1000.00;
-            }
-        }
-
-        else if (makeModel.contains("Honda") || makeModel.contains("Toyota")) {
-            for (int i = this.year; i <= currentYear; i++) {
-                if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
-                    value = value - (value * .03);
-                }
-                else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
-                    value = value - (value * .06);
-                }
-                else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
-                    value = value - (value * .08);
-                }
-                else {
-                    value = 1000.00;
+                for (int i = this.year; i <= currentYear; i++) {
+                    if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
+                        value = value - (value * .03);
+                    } else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
+                        value = value - (value * .06);
+                    } else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
+                        value = value - (value * .08);
+                    } else {
+                        value = 1000.00;
+                    }
                 }
             }
         }
@@ -77,19 +74,16 @@ public class Vehicle extends Asset {
             for (int i = this.year; i <= currentYear; i++) {
                 if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
                     value = value - (value * .03);
-                }
-                else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
-                    value = value - (value * 1.06);
-                }
-                else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
-                    value = value - (value * 1.08);
-                }
-                else {
+                } else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
+                    value = value - (value * .06);
+                } else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
+                    value = value - (value * .08);
+                } else {
                     value = 1000.00;
                 }
             }
         }
         return value;
     }
-
 }
+
