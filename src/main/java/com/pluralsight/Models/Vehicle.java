@@ -36,7 +36,59 @@ public class Vehicle extends Asset {
     }
 
     public double getValue() {
-        return getOriginalCost();
+        double value = getOriginalCost();
+        int currentYear = 2025;
+
+        if (odometer > 100000) {
+            value = value * .25;
+            if (currentYear - this.year <= 3) {
+                value = value * 1.03;
+            }
+            else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
+                value = value * 1.06;
+            }
+            else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
+                value = value * 1.08;
+            }
+            else {
+                value = 1000.00;
+            }
+        }
+
+        else if (makeModel.contains("Honda") || makeModel.contains("Toyota")) {
+            for (int i = this.year; i <= currentYear; i++) {
+                if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
+                    value = value - (value * .03);
+                }
+                else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
+                    value = value - (value * 1.06);
+                }
+                else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
+                    value = value - (value * 1.08);
+                }
+                else {
+                    value = 1000.00;
+                }
+            }
+        }
+
+        else {
+            for (int i = this.year; i <= currentYear; i++) {
+                if ((currentYear - this.year <= 3) && (currentYear - this.year >= 0)) {
+                    value = value - (value * .03);
+                }
+                else if ((currentYear - this.year <= 6) && (currentYear - this.year >= 4)) {
+                    value = value - (value * 1.06);
+                }
+                else if ((currentYear - this.year <= 10) && (currentYear - this.year >= 7)) {
+                    value = value - (value * 1.08);
+                }
+                else {
+                    value = 1000.00;
+                }
+            }
+        }
+        return value;
     }
 
 }
