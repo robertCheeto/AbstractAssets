@@ -14,10 +14,13 @@ public class Main {
         Vehicle car1 = new Vehicle("First Car", "November 30, 2022", 23500.00, "Hyundai Elantra", 2023, 15225);
         Vehicle car2 = new Vehicle("Big Ole Truck", "June 3, 1999", 1895.00, "Toyota Tacoma", 1998, 256723);
 
+        Cash dollars = new Cash("Me First Dollar", "Jul 12, 2000", 1, 5001);
+
         assets.add(home1);
         assets.add(home2);
         assets.add(car1);
         assets.add(car2);
+        assets.add(dollars);
 
 //        for (int i = 0; i < assets.size(); i++) {
 //            System.out.printf("%s | %s | $%.2f",assets.get(i).getDescription(), assets.get(i).getDateAcquired(), assets.get(i).getValue());
@@ -31,6 +34,10 @@ public class Main {
             }
             else if (assets.get(i) instanceof Vehicle) {
                 System.out.printf("%s | %s | $%.2f | %s | $%.2f ",assets.get(i).getDescription(), assets.get(i).getDateAcquired(), assets.get(i).getOriginalCost(), ((Vehicle) assets.get(i)).getMakeModel(), assets.get(i).getValue());
+                System.out.println();
+            }
+            else if (assets.get(i) instanceof Cash) {
+                System.out.printf("%s | %s | $%.2f | %s | $%.2f ",assets.get(i).getDescription(), assets.get(i).getDateAcquired(), assets.get(i).getOriginalCost(), ((Cash) assets.get(i)).getAmount(), assets.get(i).getValue());
                 System.out.println();
             }
         }
