@@ -1,6 +1,6 @@
 package com.pluralsight.Models;
 
-public class Asset {
+public abstract class Asset {
     private String description, dateAcquired;
     private double originalCost;
 
