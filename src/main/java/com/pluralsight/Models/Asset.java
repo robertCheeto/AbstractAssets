@@ -34,7 +34,5 @@ public abstract class Asset {
         this.originalCost = originalCost;
     }
 
-    public double getValue() {
-        return this.originalCost;
-    }
+    public abstract double getValue();
 }
